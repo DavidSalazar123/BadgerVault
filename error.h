@@ -34,29 +34,22 @@ enum Status
     NORECORDS,
     ENDOFPAGE,
     BADPAGEPTR,
-    // HeapFile errors
-
-    BADRID,
-    BADRECPTR,
-    BADSCANPARM,
-    BADSCANID,
-    SCANTABFULL,
-    FILEEOF,
-    FILEHDRFULL,
+    // B+ Tree errors
+    BADINDEXPARM,
+    TUPLENOTFOUND,
+    NULLROOT,
+    NOTFOUND,
+    NOSIBLINGS,
+    NULLPTR,
 
     // Index errors
 
-    BADINDEXPARM,
     RECNOTFOUND,
     BUCKETFULL,
     DIROVERFLOW,
     NONUNIQUEENTRY,
     NOMORERECS,
-
-    // SortedFile errors
-
-    BADSORTPARM,
-    INSUFMEM,
+    INDEXNOTFOUND,
 
     // Catalog errors
 

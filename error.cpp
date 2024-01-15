@@ -1,10 +1,7 @@
-
-#include <functional>
 #include <iostream>
 #include <sys/types.h>
 using namespace std;
 #include "error.h"
-#include "stdio.h"
 
 void Error::print(Status status)
 {
@@ -55,39 +52,28 @@ void Error::print(Status status)
     case ENDOFPAGE:
         cerr << "last record on page";
         break;
-    case INVALIDSLOTNO:
-        cerr << "invalid slot number";
-        break;
-    case INVALIDRECLEN:
-        cerr << "specified record length <= 0";
-        break;
 
-        // Heap file errors
-
-    case BADRID:
-        cerr << "bad record id";
-        break;
-    case BADRECPTR:
-        cerr << "bad record pointer";
-        break;
-    case BADSCANPARM:
-        cerr << "bad scan parameter";
-        break;
-    case SCANTABFULL:
-        cerr << "scan table full";
-        break;
-    case FILEEOF:
-        cerr << "end of file encountered";
-        break;
-    case FILEHDRFULL:
-        cerr << "heapfile hdear page is full";
-        break;
-
-        // Index errors
-
+        // B+ Tree errors
     case BADINDEXPARM:
         cerr << "bad index parameter";
         break;
+    case TUPLENOTFOUND:
+        cerr << "Tuple was not found!";
+        break;
+    case NULLROOT:
+        cerr << "The root is null";
+        break;
+    case NOTFOUND:
+        cerr << "The tuple is not found within tree";
+        break;
+    case NOSIBLINGS:
+        cerr << "No siblings found";
+        break;
+    case NULLPTR:
+        cerr << "Bad pointer";
+        break;
+
+        // Index errors
     case RECNOTFOUND:
         cerr << "no such record";
         break;
@@ -103,14 +89,8 @@ void Error::print(Status status)
     case NOMORERECS:
         cerr << "no more records";
         break;
-
-        // Sorted file errors
-
-    case BADSORTPARM:
-        cerr << "bad sort parameter";
-        break;
-    case INSUFMEM:
-        cerr << "insufficient memory";
+    case INDEXNOTFOUND:
+        cerr << "The index doesn't exist";
         break;
 
         // Catalog errors

@@ -15,13 +15,6 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-# How to run the tests
-# 1) Add the test files in add_executable
-# 2) Add the test file in target_link_libraries
-# 3) Create an gtest_discover_tests(file_test)
-# 4) Run the following command cmake -S . -B build && cmake --build build && cd build && ctest
-
-
 # Add the names of the files you want to execute
 add_executable(
   pagetests

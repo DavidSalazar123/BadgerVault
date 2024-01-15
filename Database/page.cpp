@@ -1,8 +1,13 @@
 #include "page.h"
 #include "../error.h"
 #include <cstring>
-#include <ostream>
 using namespace std;
+
+const unsigned PAGESIZE = 1000;
+const unsigned PAGEDATASIZE =
+    PAGESIZE - (sizeof(Slot) *
+                2); // The actual amount of data available not including slots
+const unsigned SIZELIMIT = 65; // Max size of passswords and wname
 
 /** Constructor of a page
  *

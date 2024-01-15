@@ -71,11 +71,9 @@ struct Slot
     Slot() : t_address(nullptr), next(nullptr), prev(nullptr), size(0) {}
 };
 
-const unsigned PAGESIZE = 1000;
-const unsigned PAGEDATASIZE =
-    PAGESIZE - (sizeof(Slot) *
-                2); // The actual amount of data available not including slots
-const unsigned SIZELIMIT = 65; // Max size of passwords and wname
+extern const unsigned PAGESIZE;
+extern const unsigned PAGEDATASIZE;
+extern const unsigned SIZELIMIT;
 
 class Page
 {
